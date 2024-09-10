@@ -1,5 +1,5 @@
-import { AuthPage } from "@components/auth-page";
 import { authProviderServer } from "@providers/auth-provider";
+import { AuthPage } from "@refinedev/mantine";
 import { redirect } from "next/navigation";
 
 export default async function ForgotPassword() {
@@ -9,7 +9,7 @@ export default async function ForgotPassword() {
     redirect(data?.redirectTo || "/");
   }
 
-  return <AuthPage type="forgotPassword" />;
+  return <AuthPage type="forgotPassword" title='License Master' />;
 }
 
 async function getData() {

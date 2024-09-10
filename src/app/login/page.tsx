@@ -1,5 +1,5 @@
-import { AuthPage } from "@components/auth-page";
 import { authProviderServer } from "@providers/auth-provider";
+import { AuthPage } from "@refinedev/mantine";
 import { redirect } from "next/navigation";
 
 export default async function Login() {
@@ -9,7 +9,16 @@ export default async function Login() {
     redirect(data?.redirectTo || "/");
   }
 
-  return <AuthPage type="login" />;
+  return <AuthPage
+      type="login"
+      formProps={{
+          initialValues: {
+            email: "demo@refine.dev",
+            password: "demodemo",
+          },
+      }}
+    title='License Master'
+  />
 }
 
 async function getData() {
